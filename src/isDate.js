@@ -20,6 +20,7 @@ const nodeIsDate = nodeTypes && nodeTypes.isDate
  * isDate('Mon April 23 2012')
  * // => false
  */
+
 const isDate = nodeIsDate
   ? (value) => nodeIsDate(value)
   : (value) => isObjectLike(value) && getTag(value) == '[object Date]'
