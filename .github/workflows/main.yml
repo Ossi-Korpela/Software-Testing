@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Node.js CI and Coveralls
 
 on:
   push:
@@ -8,18 +8,27 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm test
+        node-version: 16.x
+
+    - name: npm install and test
+      run: |
+        npm install
+        npm test
+
+    - name: Generate test coverage
+      run: |
+        make test-coverage
+
+    - name: Coveralls
+      uses: coverallsapp/github-action@v2
+
+
+            
