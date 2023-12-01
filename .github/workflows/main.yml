@@ -23,10 +23,6 @@ jobs:
         npm install
         npm test
 
-    - name: Generate test coverage
-      run: |
-        make test-coverage
-
     - name: Coveralls
       uses: coverallsapp/github-action@v2
 
