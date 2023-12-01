@@ -1,4 +1,4 @@
-# Student template
+# Student template [![Coverage Status](https://coveralls.io/repos/github/Ossi-Korpela/Software-Testing/badge.svg?branch=main)](https://coveralls.io/github/Ossi-Korpela/Software-Testing?branch=main)
 
 ## Purpose of this repository
 
